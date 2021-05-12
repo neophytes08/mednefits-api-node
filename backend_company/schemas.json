@@ -1,0 +1,3250 @@
+{
+  "medi_admin":
+  {
+    "admin_id": {
+        "type": "Number",
+        "required": true
+    },
+    "name": {
+        "type": "String"
+    },
+    "email": {
+        "type": "String"
+    },
+    "password": {
+        "type": "String"
+    },
+    "token": {
+        "type": "String"
+    },
+    "date": {
+        "type": "String"
+    },
+    "active": {
+        "type": "Number"
+    },
+    "type": {
+        "type": "String"
+    },
+    "created_at": {
+        "type": "Date"
+    },
+    "role": {
+        "type": "String"
+    },
+    "updated_at": {
+        "type": "String"
+    }
+  },
+  "medi_customer_purchase":
+  {
+    "customer_id": {
+        "type": "Number",
+        "required": true
+    },
+    "cover_type": {
+        "type": "Number",
+        "match": "/[0-1]/",
+        "required": true,
+        "description": "[0 individual, 1 corporate]"
+    },
+    "status": {
+        "type": "Number",
+        "match": "/[0-1]/",
+        "required": true,
+        "description": "[0 inactive, 1 active]"
+    },
+    "agree_status": {
+        "type": "Number",
+        "required": true,
+        "default": 0,
+        "match": "/[0-1]/"
+    },
+    "peak_status": {
+        "type": "Number",
+        "match": "/[0-1]/",
+        "required": true,
+        "default": 0
+    },
+    "wallet": {
+        "type": "Number",
+        "match": "/[0-1]/",
+        "required": true,
+        "default": 0
+    },
+    "qr": {
+        "type": "Number",
+        "match": "/[0-1]/",
+        "required": true,
+        "default": 0,
+        "trim": true
+    },
+    "currency_type": {
+        "type": "String",
+        "required": true,
+        "trim": true,
+        "description": "['sgd', 'myr']"
+    },
+    "currency_value": {
+        "type": "Number",
+        "required": true,
+        "default": 0,
+        "trim": true
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_customer_business_information":
+  {
+    "customer_business_information_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_id": {
+        "type": "Number",
+        "required": true
+    },
+    "company_name": {
+        "type": "String",
+        "required": true,
+        "trim": true
+    },
+    "company_size": {
+        "type": "String",
+        "required": true,
+        "trim": true
+    },
+    "company_country_city": {
+        "type": "String",
+        "required": true,
+        "trim": true
+    },
+    "company_address": {
+        "type": "String",
+        "required": true,
+        "trim": true
+    },
+    "nature_of_busines": {
+        "type": "String",
+        "required": true,
+        "trim": true
+    },
+    "postal_code": {
+        "type": "Number",
+        "required": true
+    },
+    "establish": {
+        "type": "String",
+        "trim": true
+    },
+    "contact": {
+        "type": "Object",
+        "required": true,
+        "description": "[full_name, address, job_title, email, phone, hr_email, billing_recipient(0,1),created_at,updated_at]"
+    },
+    "send_business_email_communication": {
+        "type": "Number",
+        "required": true,
+        "match": "/[0-1]/",
+        "default": 0
+    },
+    "send_business_email_billing": {
+        "type": "Number",
+        "required": true,
+        "match": "/[0-1]/",
+        "default": 0
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_customer_billing_contact":
+  {
+    "customer_billing_contact_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_id": {
+        "type": "Number",
+        "required": true
+    },
+    "billing__full_name": {
+        "type": "String",
+        "trim": true
+    },
+    "billing_address": {
+        "type": "String",
+        "trim": true
+    },
+    "bill_send_email_bill_related": {
+        "type": "Number",
+        "match": "/[0-1]/",
+        "required": true,
+        "default": 0
+    },
+    "bill_send_email_comm_related": {
+        "type": "Number",
+        "match": "/[0-1]/",
+        "required": true,
+        "default": 0
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_customer_plans":
+  {
+    "customer_plan_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_id": {
+        "type": "Number",
+        "required": true
+    },
+    "plan_start": {
+        "type": "String",
+        "required": true
+    },
+    "account_type": {
+        "type": "String",
+        "required": true,
+        "match": "/[0-3]/",
+        "default": 0,
+        "description": "[trial_plan, insurance_bundle, stand_alone_plan, lite_plan]"
+    },
+    "secondary_account_type": {
+        "type": "String",
+        "required": true,
+        "match": "/[0-2]/",
+        "default": 0,
+        "description": "[null, trial_lite_plan, insurance_bundle_lite]"
+    },
+    "plan_extension_enable": {
+        "type": "Number",
+        "required": true,
+        "match": "/[0-1]/",
+        "default": 0
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_customer_plan_status":
+  {
+    "customer_plan_status_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_plan_id": {
+        "type": "Number",
+        "required": true
+    },
+    "employee_head_count": {
+        "type": "Number",
+        "default": 0
+    },
+    "employee_enrolled_count": {
+        "type": "Number",
+        "default": 0
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+   "medi_active_plan_invoices":
+  {
+    "active_plan_invoice_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_active_plan_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_id": {
+        "type": "Number",
+        "required": true
+    },
+    "employees": {
+        "type": "Number",
+        "default": 0
+    },
+    "invoice_number": {
+        "type": "String",
+        "trim": true
+    },
+    "plan_start": {
+        "type": "Date"
+    },
+    "duration":
+    {
+        "type": "String",
+        "trim": true
+    },
+    "individual_price": {
+        "type": "Number",
+        "required": true
+    },
+    "invoice_date": {
+        "type": "Date",
+        "required": true
+    },
+    "invoice_due_date": {
+        "type": "Date",
+        "required": true
+    },
+    "refund": {
+        "type": "Number",
+        "match": "/[0-1]/",
+        "required": true,
+        "default": 0,
+        "description": "[0 no refund, 1 refund]"
+    },
+    "currency_type": {
+        "type": "String",
+        "required": true,
+        "default": 0,
+        "description": "[sgd, myr]"
+    },
+    "currency_value": {
+        "type": "Number",
+        "required": true,
+        "default": 0
+    },
+    "isPaid": {
+        "type": "Number",
+        "required": true,
+        "default": 0
+    },
+    "override_total_amount_status": {
+        "type": "Number",
+        "required": true,
+        "default": 0
+    },
+    "override_total_amount": {
+        "type": "Number",
+        "required": true,
+        "default": 0
+    },
+    "transaction_trail": {
+        "type": "Array",
+        "description": "[payment_type (credit, cheque), transaction_date, referrence_no, remarks, paid_amount]"
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_active_plan_extensions":
+  {
+    "active_plan_extensions_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_id": {
+        "type": "Number"
+    },
+    "customer_active_plan_id": {
+        "type": "Number"
+    },
+    "plan_start": {
+        "type": "Date"
+    },
+    "invoice_date": {
+        "type": "Date"
+    },
+    "invoice_due_date": {
+        "type": "Date"
+    },
+    "duration": {
+        "type": "String",
+        "trim": true
+    },
+    "individual_price": {
+        "type": "Number",
+        "default": 0
+    },
+    "paid": {
+        "type": "Number",
+        "default": 0
+    },
+    "active": {
+        "type": "Date",
+        "default": 0,
+        "description": "[0 inactive, 1 active]"
+    },
+    "enable": {
+        "type": "Number",
+        "default": 0
+    },
+    "account_type": {
+        "type": "Number",
+        "default": 0
+    },
+    "secondary_account_type": {
+        "type": "Number",
+        "default": 0
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_active_plan_extension_invoices":
+  {
+    "active_plan_extension_invoices_id": {
+        "type": "Number",
+        "required": true
+    },
+    "active_plan_extensions_id": {
+        "type": "Number",
+        "required": true
+    },
+    "employees": {
+        "type": "Number",
+        "default": 0
+    },
+    "invoice_number": {
+        "type": "String",
+        "trim": true
+    },
+    "plan_start": {
+        "type": "Date",
+        "required": true
+    },
+    "duration": {
+        "type": "String",
+        "trim": true
+    },
+    "individual_price": {
+        "type": "Number",
+        "default": 0
+    },
+    "invoice_date": {
+        "type": "Date"
+    },
+    "invoice_due_date": {
+        "type": "Date"
+    },
+    "refund": {
+        "type": "Number",
+        "match": "/[0-1]/",
+        "required": true,
+        "default": 0,
+        "description": "[0 no refund, 1 refund]"
+    },
+    "currency_type": {
+        "type": "String",
+        "trim": true,
+        "description": "['sgd', 'myr']"
+    },
+    "currency_value": { "type": "Number" },
+    "transaction_trail": {
+        "type": "Object",
+        "description": "[payment_type (credit, cheque), transaction_date, referrence_no, remarks, paid_amount]"
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_company_members":
+  {
+    "company_member_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_id": {
+        "type": "Number",
+        "required": true
+    },
+    "member_id": {
+        "type": "Number",
+        "required": true
+    },
+    "deleted": {
+        "type": "Number",
+        "required": true
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+ "medi_company_member_deleted":
+  {
+    "company_member_deleted_id": {
+        "type": "Number",
+        "required": true
+    },
+    "member_id": {
+        "type": "Number",
+        "required": true
+    },
+    "date": {
+        "type": "Date"
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_customer_hr_accounts":
+  {
+    "customer_hr_account_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_id": {
+        "type": "Number",
+        "required": true
+    },
+    "email": {
+        "type": "String",
+        "trim": true
+    },
+    "password": {
+        "type": "String",
+        "required": true
+    },
+    "type": {
+        "type": "String",
+        "description": "['finance', 'hr']"
+    },
+    "reset_token": {
+        "type": "String",
+        "required": true
+    },
+    "active": {
+        "type": "Number",
+        "default": 0
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_customer_spending_deposit_credits":
+  {
+    "customer_spending_deposit_credit_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_active_plan_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_id": {
+        "type": "Number",
+        "required": true
+    },
+    "medical_credits": {
+        "type": "Number",
+        "default": 0
+    },
+    "welness_credits": {
+        "type": "Number",
+        "default": 0
+    },
+    "medical_percent": {
+        "type": "Number",
+        "default": 0
+    },
+    "wellness_percent": {
+        "type": "Number",
+        "default": 0
+    },
+    "invoice_number": {
+        "type": "String",
+        "trim": true
+    },
+    "invoice_date": {
+        "type": "Date"
+    },
+    "invoice_due_date": {
+        "type": "Date"
+    },
+    "paid_amount": {
+        "type": "Number",
+        "default": 0
+    },
+    "paid_date": {
+        "type": "Date"
+    },
+    "payment_status": {
+        "type": "Number",
+        "default": 0
+    },
+    "payment_remarks": {
+        "type": "String"
+    },
+    "currency_type": {
+        "type": "String",
+        "trim": true,
+        "description": "['sgd', 'myr']"
+    },
+    "currency_value": {
+        "type": "Number",
+        "default": 0
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_customer_wallets":
+  {
+    "customer_wallet_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_id": {
+        "type": "Number",
+        "required": true
+    },
+    "medical_balance": {
+        "type": "Number"
+    },
+    "wellness_balance": {
+        "type": "Number"
+    },
+    "currency_type": {
+        "type": "String",
+        "trim": true,
+        "description": "['sgd', 'myr']"
+    },
+    "currency_value": {
+        "type": "Number"
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_customer_wallet_history":
+  {
+    "customer_wallet_history_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_wallet_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_id": {
+        "type": "Number",
+        "required": true
+    },
+    "credit": {
+        "type": "Number",
+        "default": 0
+    },
+    "running_balance": {
+        "type": "Number"
+    },
+    "type": {
+        "type": "String",
+        "description": "['admin_added_credits', 'added_employee_credits', 'admin_deducted_credits']"
+    },
+    "employee_id": {
+        "type": "Object"
+    },
+    "customer_active_plan_id": {
+        "type": "Object"
+    },
+    "wallet_type": {
+        "type": "String",
+        "description": "['medical', 'wellness']"
+    },
+    "currency_type": {
+        "type": "String",
+        "description": "['sgd', 'myr']"
+    },
+    "currency_value": {
+        "type": "Number",
+        "default": 0
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_customer_spending_invoices":
+  {
+    "customer_spending_invoice_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_id": {
+        "type": "Number",
+        "required": true
+    },
+    "invoice_number": {
+        "type": "String",
+        "trim": true
+    },
+    "invoice_date": {
+        "type": "Date"
+    },
+    "invoice_due_date": {
+        "type": "Date"
+    },
+    "start_date": {
+        "type": "Date"
+    },
+    "end_date": {
+        "type": "Date"
+    },
+    "payment_status": {
+        "type": "Number",
+        "default": 0,
+        "description": "[0 unpaid, 1 paid]"
+    },
+    "currency_type": {
+        "type": "String",
+        "trim": true,
+        "description": "['sgd', 'myr']"
+    },
+    "currency_value": {
+        "type": "Number",
+        "default": 0
+    },
+    "lite_plan": {
+        "type": "Number",
+        "default": 0
+    },
+    "status": {
+        "type": "Number",
+        "default": 0
+    },
+    "billing_information": {
+        "type": "Object",
+        "description": "contact_name, contact_number, contact_address, contact_email"
+    },
+    "trail_transaction": {
+        "type": "Array",
+        "description": "[payment_type (credit, cheque), transaction_date, referrence_no, remarks, paid_amount]"
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_spending_invoice_in_network_transactions":
+  {
+    "spending_invoice_in_network_transaction_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_spending_invoice_id": {
+        "type": "Number",
+        "required": true
+    },
+    "in_network_transaction_id": {
+        "type": "Number",
+        "required": true
+    },
+    "status": {
+        "type": "Number",
+        "default": 0
+    },
+    "paid": {
+        "type": "Number",
+        "default": 0
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_spending_invoice_out_network_transactions":
+  {
+    "spending_invoice_out_network_transaction_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_spending_invoice_id": {
+        "type": "Number",
+        "required": true
+    },
+    "transaction_id": {
+        "type": "Number",
+        "required": true
+    },
+    "paid": {
+        "type": "Number",
+        "default": 0
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+ "medi_wallet_resets":
+  {
+    "wallet_reset_id": {
+        "type": "Number",
+        "required": true
+    },
+    "id": {
+        "type": "Number",
+        "required": true
+    },
+    "wallet_history_id": {
+        "type": "Number",
+        "required": true
+    },
+    "spending_type": {
+        "type": "String",
+        "trim": true,
+        "description": "['medical', 'wellness']"
+    },
+    "user_type": {
+        "type": "String",
+        "trim": true,
+        "description": "['company', 'employee']"
+    },
+    "credit": {
+        "type": "Number",
+        "default": 0
+    },
+    "currency_type": {
+        "type": "String",
+        "trim": true,
+        "description": "['sgd', 'myr']"
+    },
+    "currency_value": {
+        "type": "Number",
+        "default": 0
+    },
+    "date_resetted": {
+        "type": "Date"
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_company_block_clinic_access":
+  {
+    "company_block_clinic_access_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_id": {
+        "type": "Number",
+        "required": true
+    },
+    "account_type": {
+      "type": "Number",
+      "description": "[company, employee]",
+      "required": true
+    },
+    "clinic_id": {
+        "type": "String",
+        "required": true
+    },
+    "status": {
+        "type": "Number",
+        "default": 0,
+        "description": "[0,1]"
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_customer_renew_plans":
+  {
+    "customer_renew_plans_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_id": {
+        "type": "Number",
+        "required": true
+    },
+    "plan_start": {
+        "type": "Date"
+    },
+    "duration": {
+        "type": "String",
+        "trim": true
+    },
+    "employees": {
+        "type": "Number",
+        "default": 0
+    },
+    "additional_employees": {
+        "type": "Number",
+        "default": 0
+    },
+    "individual_price": {
+        "type": "Number"
+    },
+    "account_type": {
+        "type": "Number"
+    },
+    "secondary_account_type": {
+        "type": "Number" ,
+        "default": 0
+    },
+    "paid_status": {
+        "type": "Number"
+    },
+    "paid_date": {
+        "type": "Date"
+    },
+    "medical_credits": {
+        "type": "Number"
+    },
+    "wellness_credits": {
+        "type": "Number"
+    },
+    "dependent_headcount": {
+        "type": "Number"
+    },
+    "dependent_additional_employees": {
+        "type": "Number"
+    },
+    "dependent_plan_start": {
+        "type": "Date"
+    },
+    "dependent_duration": {
+        "type": "String"
+    },
+    "dependent_paid_status": {
+        "type": "Number"
+    },
+    "dependent_individual_price": {
+        "type": "Number"
+    },
+    "dependent_account_type": {
+        "type": "String"
+    },
+    "dependent_secondary_account_type": {
+        "type": "String"
+    },
+    "dependent_status": {
+        "type": "Number"
+    },
+    "currency_type": {
+        "type": "String",
+        "trim": true,
+        "description": "['sgd', 'myr']"
+    },
+    "currency_value": {
+        "type": "Number",
+        "default": 0
+    },
+    "status": {
+        "type": "Number",
+        "default": 0
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_customer_employee_plan_payment_refunds":
+  {
+    "customer_employee_plan_payment_refund_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_active_plan_id": {
+        "type": "Number",
+        "required": true
+    },
+    "invoice_number": {
+        "type": "String",
+        "trim": true
+    },
+    "invoice_date": {
+        "type": "Date"
+    },
+    "invoice_due_date": {
+        "type": "Date"
+    },
+    "refund_date": {
+        "type": "Date"
+    },
+    "refund_amount": {
+        "type": "Number"
+    },
+    "status": {
+        "type": "Number",
+        "default": 0,
+        "description": "[0,1]"
+    },
+    "currency_type": {
+        "type": "String",
+        "trim": true,
+        "description": "['sgd', 'myr']"
+    },
+    "currency_value": {
+        "type": "Number",
+        "default": 0
+    },
+    "billing_information": {
+        "type": "Object",
+        "description": "[contact_name, contact_number, contact_address, contact_email]"
+    },
+    "trail_transaction": {
+        "type": "Object",
+        "description": "[ payment_type (credit, cheque), transaction_date, referrence_no, remarks, paid_amount]"
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_customer_employee_plan_refund_details":
+  {
+    "customer_employee_plan_refund_detail_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_employee_plan_payment_refund_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_active_plan_id": {
+        "type": "Number",
+        "required": true
+    },
+    "employee_id": {
+        "type": "Number",
+        "required": true
+    },
+    "date_withdraw": {
+        "type": "Date"
+    },
+    "amount": {
+        "type": "Number",
+        "default": 0
+    },
+    "currency_type": {
+        "type": "String",
+        "trim": true,
+        "description": "['sgd', 'myr']"
+    },
+    "currency_value": {
+        "type": "Number"
+    },
+    "status": {
+        "type": "Number",
+        "default": 0
+    },
+    "paid": {
+        "type": "Number",
+        "default": 0
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_customer_plan_tiers":
+  {
+    "plan_tier_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_id": {
+        "type": "Number",
+        "required": true
+    },
+    "plan_tier_name": {
+        "type": "String",
+        "trim": true
+    },
+    "medical_annual_cap": {
+        "type": "Number"
+    },
+    "wellness_annual_cap": {
+        "type": "Number"
+    },
+    "gp_cap_per_visit": {
+        "type": "Number"
+    },
+    "employee_head_count": {
+        "type": "Number" }
+        ,
+    "employee_enrolled_count": {
+        "type": "Number"
+    },
+    "dependent_head_count": {
+        "type": "Number"
+    },
+    "dependent_enrolled_count": {
+        "type": "Number"
+    },
+    "active": {
+        "type": "Number",
+        "default": 0
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_customer_plan_tier_users":
+  {
+    "plan_tier_user_id": {
+        "type": "Number",
+        "required": true
+    },
+    "plan_tier_id": {
+        "type": "Number",
+        "required": true
+    },
+    "member_id": {
+        "type": "Number",
+        "required": true
+    },
+    "status": {
+        "type": "Number",
+        "default": 0
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_dependent_plans":
+  {
+    "dependent_plan_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_plan_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_active_plan_id": {
+        "type": "Number",
+        "required": true
+    },
+    "total_dependents": {
+        "type": "Number",
+        "default": 0
+    },
+    "plan_start": {
+        "type": "Date"
+    },
+    "duration": {
+        "type": "String",
+        "trim": 0
+    },
+    "enable": {
+        "type": "Number",
+        "default": 0
+    },
+    "account_type": {
+        "type": "Number",
+        "default": 0
+    },
+    "secondary_account_type": {
+        "type": "Number",
+        "required": true,
+        "default": 0
+    },
+    "type": {
+        "type": "String",
+        "description": "['active_plan', 'plan_extension']"
+    },
+    "tagged_active_plan_invoice": {
+        "type": "Number",
+        "default": 0
+    },
+    "isPaid": {
+        "type": "Number",
+        "default": 0
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_dependent_invoices":
+  {
+    "dependent_invoice_id": {
+        "type": "Number",
+        "required": true
+    },
+    "dependent_plan_id": {
+        "type": "Number",
+        "required": true
+    },
+    "invoice_number": {
+        "type": "String",
+        "trim": true
+    },
+    "invoice_date": {
+        "type": "Date"
+    },
+    "invoice_due_date": {
+        "type": "Date"
+    },
+    "total_dependents": {
+        "type": "Number",
+        "default": 0
+    },
+    "individual_price": {
+        "type": "Number",
+        "default": 0
+    },
+    "plan_start": {
+        "type": "Date"
+    },
+    "currency_type": {
+        "type": "String",
+        "trim": true,
+        "description": "['sgd', 'myr']"
+    },
+    "currency_value": {
+        "type": "Number",
+        "default": 0
+    },
+    "billing_information": {
+        "type": "Object",
+        "description": "[contact_name, contact_number, contact_address, contact_email]"
+    },
+    "transaction_trail": {
+        "type": "Object",
+        "description": "[payment_type (credit, cheque), transaction_date, referrence_no, remarks, paid_amount]"
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_dependent_plan_status":
+  {
+    "dependent_plan_status_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_plan_id": {
+        "type": "Number",
+        "required": true
+    },
+    "dependent_head_count": {
+        "type": "Number",
+        "default": 0
+    },
+    "dependent_enrolled_count": {
+        "type": "Number",
+        "default": 0
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_dependent_plan_history":
+  {
+    "dependent_plan_history_id": {
+        "type": "Number",
+        "required": true
+    },
+    "member_id": {
+        "type": "Number",
+        "required": true
+    },
+    "dependent_plan_id": {
+        "type": "Number",
+        "required": true
+    },
+    "package_group_id": {
+        "type": "Number",
+        "required": true
+    },
+    "plan_start": {
+        "type": "Date"
+    },
+    "plan_end": {
+        "type": "Date"
+    },
+    "duration": {
+        "type": "String",
+        "trim": true
+    },
+    "type": {
+        "type": "String",
+        "trim": true,
+        "description": "['started', 'expired', 'deleted']"
+    },
+    "fixed": {
+        "type": "Number",
+        "default": 0
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_dependent_payment_refunds":
+  {
+    "dependent_payment_refund_id": {
+        "type": "Number",
+        "required": true
+    },
+    "dependent_plan_id": {
+        "type": "Number",
+        "required": true
+    },
+    "invoice_number": {
+        "type": "String",
+        "trim": true
+    },
+    "invoice_date": {
+        "type": "Date"
+    },
+    "invoice_due": {
+        "type": "Date"
+    },
+    "refund_date": {
+        "type": "Date"
+    },
+    "refund_amount": {
+        "type": "Number"
+    },
+    "status": {
+        "type": "Number",
+        "default": 0
+    },
+    "currency_type": {
+        "type": "String",
+        "description": "['sgd', 'myr']"
+    },
+    "currency_value": {
+        "type": "Number"
+    },
+    "billing_information": {
+        "type": "Object",
+        "description": {}
+    },
+    "transaction_trail": {
+        "type": "Object",
+        "description": "[payment_type (credit, cheque), transaction_date, referrence_no, remarks, paid_amount]"
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date" ,
+        "required": true
+    }
+  },
+  "medi_dependent_plan_withdraws":
+  {
+    "dependent_plan_withdraw_id": {
+        "type": "Number",
+        "required": true
+    },
+    "dependent_payment_refund_id": {
+        "type": "Number",
+        "required": true
+    },
+    "member_id": {
+        "type": "Number",
+        "required": true
+    },
+    "dependent_plan_id": {
+        "type": "Number",
+        "required": true
+    },
+    "date_withdraw": {
+        "type": "Date"
+    },
+    "amount": {
+        "type": "Number",
+        "default": 0
+    },
+    "currency_type": {
+        "type": "String",
+        "trim": true,
+        "description": "['sgd', 'myr']"
+    },
+    "currency_value": {
+        "type": "Number",
+        "default": 0
+    },
+    "status": {
+        "type": "Number",
+        "default": 0,
+        "description": "[0,1]"
+    },
+    "paid": {
+        "type": "Number",
+        "default": 0,
+        "description": "[0,1]"
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_agent_referral_company": {
+    "agent_referral_company_id": {
+        "type": "Number",
+        "required": true
+    },
+    "name": {
+        "type": "String",
+        "trim": true
+    },
+    "code": {
+        "type": "String",
+        "trim": true
+    },
+    "customer_id": {
+        "type": "Number",
+        "required": true
+    },
+    "created_at": {
+        "required": true,
+        "type": "Date"
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_health_provider_types": {
+    "health_provider_type_id": {
+        "type": "Number",
+        "required": true
+    },
+    "name": {
+        "type": "String",
+        "required": true
+    },
+    "image_url": {
+        "type": "String",
+        "required": false
+    },
+    "position": {
+        "type": "Number",
+        "default": 0
+    },
+    "active": {
+        "type": "Number",
+        "default": 1
+    },
+    "discount_enabled_status": {
+        "type": "Number",
+        "default": 0,
+        "description": "[0,1]"
+    },
+    "discount_type": {
+        "type": "String",
+        "default": "fixed",
+        "description": "['fixed','percent']"
+    },
+    "discount_value": {
+        "type": "Number",
+        "default": 0
+    },
+    "co_paid_enabled_status": {
+        "type": "Number",
+        "default": 0,
+        "description": "[0,1]"
+    },
+    "co_paid_status": {
+        "type": "Number",
+        "default": 0,
+        "description": "[0,1]"
+    },
+    "co_paid_amount": {
+        "type": "Number",
+        "default": 0
+    },
+    "service_head": {
+        "type": "Number",
+        "default": 0
+    },
+    "service_sub": {
+        "type": "Number",
+        "default": 0
+    },
+    "service_sub_id": {
+        "type": "Number",
+        "required": false
+    },
+    "spending_type": {
+        "type": "String",
+        "required": true,
+        "description": "['medical','wellness']"
+    },
+    "lite_plan_enabled": {
+        "type": "Number",
+        "default": 0,
+        "description": "[0,1]"
+    },
+    "deleted": {
+        "type": "Number",
+        "required": true
+    },
+    "deleted_at": {
+        "type": "String",
+        "required": true
+    },
+    "created_at": {
+        "type": "String",
+        "required": true
+    },
+    "updated_at": {
+        "type": "String",
+        "required": true
+    }
+  },
+  "medi_customer_active_plans": {
+    "customer_active_plan_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_plan_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_id": {
+        "type": "Number",
+        "required": true
+    },
+    "expired": {
+        "type": "Number",
+        "required": true
+    },
+    "employees": {
+        "type": "Number",
+        "required": true
+    },
+    "plan_start": {
+        "type": "String",
+        "required": true
+    },
+    "duration": {
+        "type": "String",
+        "required": true
+    },
+    "new_head_count": {
+        "type": "Number",
+        "required": true
+    },
+    "account_type": {
+        "type": "Number",
+        "required": true
+    },
+    "secondary_account_type": {
+        "type": "Number",
+        "required": true
+    },
+    "deleted": {
+        "type": "Number",
+        "required": true
+    },
+    "deleted_at": {
+        "type": "String",
+        "required": true
+    },
+    "plan_extenstion_enable": {
+        "type": "Number",
+        "required": true
+    },
+    "created_at": {
+        "type": "String",
+        "required": true
+    },
+    "updated_at": {
+        "type": "String",
+        "required": true
+    }
+  },
+  "medi_customer_employee_temp_enrollment": {
+    "temp_enrollment_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_id": {
+        "type": "Number"
+    },
+    "plan_tier_id": {
+        "type": "Number"
+    },
+    "customer_active_plan_id": {
+        "type": "Number"
+    },
+    "fullname": {
+        "type": "String"
+    },
+    "dob": {
+        "type": "String"
+    },
+    "email": {
+        "type": "String"
+    },
+    "mobile": {
+        "type": "String"
+    },
+    "mobile_area_code": {
+        "type": "String"
+    },
+    "job_title": {
+        "type": "String"
+    },
+    "postal_code": {
+        "type": "String"
+    },
+    "medical_credits": {
+        "type": "Number"
+    },
+    "wellness_credits": {
+        "type": "Number"
+    },
+    "start_date": {
+        "type": "String"
+    },
+    "error_logs": {
+        "type": "Object"
+    },
+    "enrolled_status": {
+        "type": "Number"
+    },
+    "created_at": {
+        "type": "String"
+    },
+    "updated_at": {
+        "type": "String"
+    }
+  },
+  "medi_dependent_temp_enrollment": {
+    "dependent_temp_enrollment_id": {
+        "type": "Number",
+        "required": true
+    },
+    "employee_temp_id": {
+        "type": "Number"
+    },
+    "dependent_plan_id": {
+        "type": "Number"
+    },
+    "plan_tier_id": {
+        "type": "Number"
+    },
+    "first_name": {
+        "type": "String"
+    },
+    "last_name": {
+        "type": "String"
+    },
+    "nric": {
+        "type": "String"
+    },
+    "dob": {
+        "type": "String"
+    },
+    "plan_start": {
+        "type": "String"
+    },
+    "relationship": {
+        "type": "String"
+    },
+    "error_logs": {
+        "type": "Object"
+    },
+    "created_at": {
+        "type": "String"
+    },
+    "updated_at": {
+        "type": "String"
+    }
+  },
+  "medi_benefits_package_group": {
+    "benefits_package_group_id": {
+        "type": "Number",
+        "required": true
+    },
+    "account_type": {
+        "type": "String"
+    },
+    "name": {
+        "type": "String"
+    },
+    "secondary_account_type": {
+        "type": "String"
+    },
+    "wallet": {
+        "type": "Number"
+    },
+    "default_selection": {
+        "type": "Number"
+    },
+    "created_at": {
+        "type": "String",
+        "required": true
+    },
+    "updated_at": {
+        "type": "String",
+        "required": true
+    }
+  },
+  "medi_benefits_package_bundle": {
+    "benefits_package_bundle_id": {
+        "type": "Number",
+        "required": true
+    },
+    "benefits_care_package_id": {
+        "type": "Number",
+        "required": true
+    },
+    "package_group_id": {
+        "type": "Number",
+        "required": true
+    },
+    "created_at": {
+        "type": "Date"
+    },
+    "updated_at": {
+        "type": "Date"
+    }
+  },
+  "medi_member_wallet": {
+    "member_wallet_id": {
+        "type": "Number",
+        "required": true
+    },
+    "member_id": {
+        "type": "Number",
+        "required": true
+    },
+    "cap_amount": {
+        "type": "Number",
+        "required": true,
+        "default": 0
+    },
+    "medical_balance": {
+        "type": "Number",
+        "required": true,
+        "default": 0
+    },
+    "wellness_balance": {
+        "type": "Number",
+        "required": true,
+        "default": 0
+    },
+    "unlimited": {
+        "type": "Number",
+        "default": 0
+    },
+    "created_at": {
+        "type": "String",
+        "required": true
+    },
+    "updated_at": {
+        "type": "String",
+        "required": true
+    }
+  },
+  "medi_member_wallet_history": {
+    "wallet_history_id": {
+        "type": "Number",
+        "required": true
+    },
+    "member_wallet_id": {
+        "type": "Number",
+        "required": true
+    },
+    "employee_id": {
+        "type": "Number",
+        "required": true
+    },
+    "credit": {
+        "type": "Number",
+        "required": true
+    },
+    "running_balance": {
+        "type": "Number",
+        "required": true
+    },
+    "type": {
+        "type": "String",
+        "required": true
+    },
+    "customer_active_plan_id": {
+        "type": "String",
+        "required": true
+    },
+    "wallet_type": {
+        "type": "String",
+        "required": true,
+        "description": "[medical, wellness]"
+    },
+    "spend": {
+        "type": "Number",
+        "required": true,
+        "description": "[in_network, e_claim]"
+    },
+    "from_pro_allocation": {
+        "type": "Number",
+        "required": true,
+        "description": "[1, 0]"
+    },
+    "back_date_deduction": {
+        "type": "Number",
+        "default": 0
+    },
+    "pro_allocation_start_date": {
+        "type": "Date",
+        "required": true
+    },
+    "pro_allocation_end_date": {
+        "type": "Date"
+    },
+    "created_at": {
+        "type": "String",
+        "required": true
+    },
+    "updated_at": {
+        "type": "String",
+        "required": true
+    }
+  },
+  "medi_members": {
+    "member_id": {
+        "type": "Number",
+        "required": true
+    },
+    "fullname": {
+        "type": "String",
+        "required": true},
+    "nric": {
+        "type": "String",
+        "required": true},
+    "email": {
+        "type": "String",
+        "required": true},
+    "password": {
+        "type": "String",
+        "required": true},
+    "address": {
+        "type": "String",
+        "required": true},
+    "country": {
+        "type": "String",
+        "required": true},
+    "city": {
+        "type": "String",
+        "required": true},
+    "postal_code": {
+        "type": "Number",
+        "required": true},
+    "image": {
+        "type": "String",
+        "required": true},
+    "phone_code": {
+        "type": "String",
+        "required": true},
+    "phone_no": {
+        "type": "String",
+        "required": true},
+    "otp_code": {
+        "type": "String",
+        "required": true},
+    "otp_status": {
+        "type": "Number",
+        "required": true},
+    "dob": {
+        "type": "String",
+        "required": true},
+    "bmi": {
+        "type": "String",
+        "required": true},
+    "weight": {
+        "type": "String",
+        "required": true},
+    "height": {
+        "type": "String",
+        "required": true},
+    "blood_type": {
+        "type": "String",
+        "required": true},
+    "job_title": {
+        "type": "String",
+        "required": true},
+    "bank_account_number": {
+        "type": "String",
+        "required": true},
+    "bank_code": {
+        "type": "String",
+        "required": true},
+    "bank_brh": {
+        "type": "String",
+        "required": true},
+    "communication_type": {
+        "type": "String",
+        "required": true},
+    "member_type" : {
+        "type": "String",
+        "required": true,
+        "description": "[employee, individual, dependents, public]"
+    },
+    "active" : {
+        "type": "Number",
+        "required": true,
+        "default": 0
+    },
+    "created_at": {
+        "type": "String",
+        "required": true
+    },
+    "updated_at": {
+        "type": "String",
+        "required": true
+    }
+  },
+  "medi_health_providers": {
+    "health_provider_id": {
+        "type": "Number",
+        "required": true
+    },
+    "provider_type_ids": {
+        "type": "Array",
+        "required": true
+    },
+    "email_address": {
+        "type": "String",
+        "required": true
+    },
+    "password": {
+        "type": "String",
+        "required": true
+    },
+    "communication_emails": {
+        "type": "Array"
+    },
+    "reset_token": {
+        "type": "String"
+    },
+    "name": {
+        "type": "String",
+        "required": true
+    },
+    "description": {
+        "type": "String"
+    },
+    "custom_title": {
+        "type": "String"
+    },
+    "website_link": {
+        "type": "String"
+    },
+    "provider_image": {
+        "type": "String",
+        "required": true
+    },
+    "address": {
+        "type": "String",
+        "required": true
+    },
+    "city": {
+        "type": "String",
+        "required": true
+    },
+    "state": {
+        "type": "String"
+    },
+    "country": {
+        "type": "String",
+        "required": true
+    },
+    "district": {
+        "type": "String"
+    },
+    "loc": {
+      "type": {
+        "type": "String",
+        "default": "Point"
+      },
+      "coordinates": ["Number"]
+    },
+    "phone_code": {
+        "type": "String",
+        "default": "+65"
+    },
+    "phone_no": {
+        "type": "String"
+    },
+    "mrt": {
+        "type": "String"
+    },
+    "opening_schedule": {
+        "type": "String"
+    },
+    "calendar_type": {
+        "type": "Number",
+        "default": "1"
+    },
+    "calendar_day": {
+        "type": "Number",
+        "default": "1"
+    },
+    "calendar_duration": {
+        "type": "Number",
+        "default": "15"
+    },
+    "calendar_start_hour": {
+        "type": "String",
+        "default": "12:00 AM"
+    },
+    "required_pin": {
+        "type": "Number",
+        "default": 0
+    },
+    "active": {
+        "type": "Number",
+        "default": 0
+    },
+    "billing_name": {
+        "type": "String"
+    },
+    "billing_address": {
+        "type": "String"
+    },
+    "billing_status": {
+        "type": "Number",
+        "default": 0
+    },
+    "currency_type": {
+        "type": "String",
+        "required": true
+    },
+    "currency_value": {
+        "type": "Number",
+        "default": 0
+    },
+    "discount_status": {
+        "type": "Number",
+        "default": 0
+    },
+    "discount_type": {
+        "type": "String",
+        "default": "fixed",
+        "description": ["fixed", "percent"]
+    },
+    "discount_value": {
+        "type": "Number",
+        "default": 0
+    },
+    "mednefits_discount_status": {
+        "type": "Number",
+        "default": 0
+    },
+    "mednefits_discount_type": {
+        "type": "String",
+        "default": "fixed",
+        "description": ["fixed", "percent"]
+    },
+    "mednefits_discount_value": {
+        "type": "Number",
+        "default": 0
+    },
+    "peak_hour_status": {
+        "type": "Number",
+        "default": 0
+    },
+    "co_paid_enabled": {
+        "type": "Number",
+        "default": 0
+    },
+    "co_paid_status": {
+        "type": "Number",
+        "default": 0
+    },
+    "co_paid_amount": {
+        "type": "Number",
+        "default": 0
+    },
+    "consultation_gst_status": {
+        "type": "Number",
+        "default": 0
+    },
+    "consultation_fees": {
+        "type": "Number",
+        "default": 0
+    },
+    "gst_value": {
+        "type": "Number",
+        "default": 0.07
+    },
+    "test_account": {
+        "type": "Number",
+        "default": 0
+    },
+    "configure": {
+        "type": "Number",
+        "default": 0
+    },
+    "payment_details": {
+        "type": "Object",
+            "description": "[bank_name, bank_account_type, bank_account_number, created_at, updated_at]"
+    },
+    "deleted": {
+        "type": "Number",
+        "default": 0
+    },
+    "deleted_at": {
+        "type": "String"
+    },
+    "created_at": {
+        "type": "String"
+    },
+    "updated_at": {
+        "type": "String"
+    }
+  },
+  "medi_manage_times": {
+    "manage_time_id": {
+        "type": "Number",
+        "required": true
+    },
+    "id": {
+        "type": "Number",
+        "required": true
+    },
+    "type": {
+        "type": "String",
+        "required": true,
+        "description": ["health_provider", "professional"]
+    },
+    "start_time": {
+        "type": "String",
+        "required": true
+    },
+    "end_time": {
+        "type": "String",
+        "required": true
+    },
+    "mon": {
+        "type": "Number",
+        "default": 0
+    },
+    "tue": {
+        "type": "Number",
+        "default": 0
+    },
+    "wed": {
+        "type": "Number",
+        "default": 0
+    },
+    "thu": {
+        "type": "Number",
+        "default": 0
+    },
+    "fri": {
+        "type": "Number",
+        "default": 0
+    },
+    "sat": {
+        "type": "Number",
+        "default": 0
+    },
+    "sun": {
+        "type": "Number",
+        "default": 0
+    },
+    "repeat": {
+        "type": "Number",
+        "default": 1
+    },
+    "active": {
+        "type": "Number",
+        "default": 0
+    },
+    "created_at": {
+        "type": "String"
+    },
+    "updated_at": {
+        "type": "String"
+    }
+  },
+  "medi_provider_peaks": {
+    "provider_peak_id": {
+        "type": "Number",
+        "required": true
+    },
+    "provider_id": {
+        "type": "Number",
+        "required": true
+    },
+    "type": {
+        "type": "String",
+        "required": true,
+        "default": "full",
+        "description": ["full", "period"]
+    },
+    "day": {
+        "type": "String",
+        "required": true
+    },
+    "amount": {
+        "type": "Number",
+        "required": true
+    },
+    "start": {
+        "type": "String",
+        "required": true
+    },
+    "end": {
+        "type": "String",
+        "required": true
+    },
+    "active": {
+        "type": "Number",
+        "default": 0
+    },
+    "created_at": {
+        "type": "Date"
+    },
+    "updated_at": {
+        "type": "Date"
+    }
+  },
+  "medi_member_benefits_package": {
+    "member_benefits_package_id": {
+        "type": "Number",
+        "required": true
+    },
+    "member_id": {
+        "type": "Number",
+        "required": true
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_member_plan_history": {
+    "member_plan_history_id": {
+        "type": "Number",
+        "required": true
+    },
+    "member_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_active_plan_id": {
+        "type": "Number",
+        "required": true
+    },
+    "package_group_id": {
+        "type": "Number",
+        "required": true
+    },
+    "plan_start": {
+        "type": "String",
+        "required": true
+    },
+    "plan_end": {
+        "type": "String",
+        "required": false
+    },
+    "duration": {
+        "type": "String",
+        "required": true
+    },
+    "fixed": {
+        "type": "Number",
+        "required": true,
+        "description": "[0,1]"
+    },
+    "type": {
+        "type": "String",
+        "required": true,
+        "description": "['started', 'expired', 'deleted']"
+    },
+    "created_at": {
+        "type": "String",
+        "required": true
+    },
+    "updated_at": {
+        "type": "String",
+        "required": true
+    }
+  },
+  "medi_member_covered_dependents": {
+    "member_covered_dependent_id": {
+        "type": "Number",
+        "required": true
+    },
+    "owner_id": {
+        "type": "Number",
+        "required": true
+    },
+    "member_id": {
+        "type": "Number",
+        "required": true
+    },
+    "relationship": {
+        "type": "String",
+        "required": true
+    },
+    "user_type": {
+        "type": "String",
+        "required": true
+    },
+    "deleted": {
+        "type": "Number",
+        "required": true
+    },
+    "deleted_at": {
+        "type": "String",
+        "required": true
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_provider_peak_holidays": {
+    "provider_peak_holiday_id": {
+        "type": "Number",
+        "required": true
+    },
+    "provider_id": {
+        "type": "Number",
+        "required": true
+    },
+    "month": {
+        "type": "String",
+        "required": true
+    },
+    "day_number": {
+        "type": "Number",
+        "required": true
+    },
+    "day_week": {
+        "type": "String",
+        "required": true
+    },
+    "type": {
+        "type": "String",
+        "default": "full",
+        "description": ["full", "period"]
+    },
+    "description": {
+        "type": "String",
+        "required": true
+    },
+    "amount": {
+        "type": "Number",
+        "required": true
+    },
+    "start": {
+        "type": "String",
+        "required": true
+    },
+    "end": {
+        "type": "String",
+        "required": true
+    },
+    "active": {
+        "type": "Number",
+        "default": 0
+    },
+    "created_at": {
+        "type": "String"
+    },
+    "updated_at": {
+        "type": "String"
+    }
+  },
+  "medi_professionals": {
+    "professional_id": {
+        "type": "Number",
+        "required": true
+    },
+    "provider_id": {
+        "type": "Number",
+        "required": true
+    },
+    "name": {
+        "type": "String",
+        "required": true
+    },
+    "email_address": {
+        "type": "String",
+        "required": true
+    },
+    "description": {
+        "type": "String"
+    },
+    "qualifications": {
+        "type": "Array"
+    },
+    "specialty": {
+        "type": "String"
+    },
+    "type": {
+        "type": "String",
+        "required": true,
+        "description": ["doctor", "staff"]
+    },
+    "gender": {
+        "type": "String"
+    },
+    "dob": {
+        "type": "String"
+    },
+    "image": {
+        "type": "String"
+    },
+    "phone_no": {
+        "type": "String"
+    },
+    "phone_code": {
+        "type": "String"
+    },
+    "gmail_address": {
+        "type": "String"
+    },
+    "gmail_token": {
+        "type": "String"
+    },
+    "cc_emails": {
+        "type": "Array"
+    },
+    "check_pin": {
+        "type": "Number",
+        "default": 0
+    },
+    "check_sync": {
+        "type": "Number",
+        "default": 0
+    },
+    "pin": {
+        "type": "Number"
+    },
+    "google_link": {
+        "type": "String"
+    },
+    "google_link_code": {
+        "type": "String"
+    },
+    "professional_availabity": {
+        "type": "Number",
+        "default": 0
+    },
+    "start_availability_time": {
+        "type": "String"
+    },
+    "end_availability_time": {
+        "type": "String"
+    },
+    "active": {
+        "type": "Number",
+        "default": 0
+    },
+    "deleted": {
+        "type": "String",
+        "default": 0
+    },
+    "deleted_at": {
+        "type": "String"
+    },
+    "created_at": {
+        "type": "String"
+    },
+    "updated_at": {
+        "type": "String"
+    }
+  },
+  "medi_health_provider_services": {
+    "health_provider_service_id": {
+        "type": "Number",
+        "required": true
+    },
+    "provider_id": {
+        "type": "String",
+        "required": true
+    },
+    "service_name": {
+        "type": "String",
+        "required": true
+    },
+    "description": {
+        "type": "String",
+        "required": true
+    },
+    "duration": {
+        "type": "Number",
+        "required": true
+    },
+    "duration_type": {
+        "type": "String",
+        "default": "minutes",
+        "description": ["minutes", "hours"]
+    },
+    "price": {
+        "type": "String",
+        "default": 0
+    },
+    "currency_type": {
+        "type": "String",
+        "default": "sgd"
+    },
+    "consultation": {
+        "type": "Number",
+        "default": 0
+    },
+    "co_paid_status": {
+        "type": "String",
+        "default": 0
+    },
+    "co_paid_amount": {
+        "type": "Number",
+        "default": 0
+    },
+    "active": {
+        "type": "Number",
+        "default": 0
+    },
+    "position": {
+        "type": "Number",
+        "default": 0
+    },
+    "scan_pay_show": {
+        "type": "Number",
+        "default": 0
+    },
+    "deleted": {
+        "type": "String",
+        "default": 0
+    },
+    "deleted_at": {
+        "type": "String"
+    },
+    "created_at": {
+        "type": "Date"
+    },
+    "updated_at": {
+        "type": "Date"
+    }
+  },
+  "medi_professional_services": {
+      "professional_service_id": {
+          "type": "Number",
+          "required": true
+      },
+      "professional_id": {
+          "type": "String",
+          "required": true
+      },
+      "provider_id": {
+          "type": "String",
+          "required": true
+      },
+      "provider_service_id": {
+          "type": "String",
+          "required": true
+      },
+      "active": {
+          "type": "Number",
+          "required": true,
+          "default": 0
+      },
+      "deleted": {
+          "type": "String",
+          "default": 0
+      },
+      "deleted_at": {
+          "type": "String"
+      },
+      "created_at": {
+          "type": "Date"
+      },
+      "updated_at": {
+          "type": "Date"
+      }
+  },
+  "medi_benefits_care_package": {
+    "benefits_care_package_id": {
+        "type": "Number",
+        "required": true
+    },
+    "package_name": {
+        "type": "String",
+        "required": true
+    },
+    "package_description": {
+        "type": "String"
+    },
+    "package_discount": {
+        "type": "String"
+    },
+    "position": {
+        "type": "Number"
+    },
+    "image": {
+        "type": "String"
+    },
+    "active": {
+        "type": "Number",
+        "required": true,
+        "default": 0
+    },
+    "deleted": {
+        "type": "String",
+        "default": 0
+    },
+    "deleted_at": {
+        "type": "String"
+    },
+    "created_at": {
+        "type": "Date"
+    },
+    "updated_at": {
+        "type": "Date"
+    }
+  },
+  "medi_member_in_network_transactions": {
+    "in_network_transaction_id": {
+        "type": "Number",
+        "required": true
+    },
+    "member_id": {
+        "type": "Number",
+        "required": true
+    },
+    "provider_id": {
+        "type": "Number",
+        "required": true
+    },
+    "transaction_id": {
+        "type": "String",
+        "required": true
+    },
+    "health_provider_done": {
+        "type": "Number",
+        "required": true
+    },
+    "procedure_ids": {
+        "type": "Array",
+        "required": true,
+        "description": "(array of ids)"
+    },
+    "doctor_id": {
+        "type": "String",
+        "required": true
+    },
+    "appointment_id": {
+        "type": "String",
+        "required": true
+    },
+    "procedure_cost": {
+        "type": "Number",
+        "required": true
+    },
+    "credit_cost": {
+        "type": "Number",
+        "required": true
+    },
+    "date_of_transaction": {
+        "type": "Date",
+        "required": true
+    },
+    "claim_date": {
+        "type": "Date",
+        "required": true
+    },
+    "paid_status": {
+        "type": "Number",
+        "required": true
+    },
+    "member_discount": {
+        "type": "Number",
+        "required": true
+    },
+    "member_discount_type": {
+        "type": "Number",
+        "required": true,
+        "description": "[percent, fixed]"
+    },
+    "provider_discount": {
+        "type": "Number",
+        "required": true
+    },
+    "provider_discount_type": {
+        "type": "Number",
+        "required": true,
+        "description": "[percent, fixed]"
+    },
+    "co_paid_status": {
+        "type": "Number",
+        "required": true,
+        "description": "(0, 1)"
+    },
+    "co_paid_type": {
+        "type": "Number",
+        "required": true,
+        "description": "[percent, fixed]"
+    },
+    "co_paid_amount": {
+        "type": "Number",
+        "required": true
+    },
+    "consultation_fees": {
+        "type": "Number",
+        "required": true
+    },
+    "consultation_status": {
+        "type": "Number",
+        "required": true
+    },
+    "cap_per_visit": {
+        "type": "Number",
+        "required": true
+    },
+    "transaction_made": {
+        "type": "Number",
+        "required": true,
+        "description": "(0 ,mobile, 1 ,claim_type, 2 ,direct_payment)"
+    },
+    "direct_payment": {
+        "type": "Number",
+        "required": true,
+        "description": "(0,1)"
+    },
+    "half_credits": {
+        "type": "Number",
+        "required": true,
+        "description": "(0, 1)"
+    },
+    "refunded": {
+        "type": "Number",
+        "required": true,
+        "description": "(0, 1)"
+    },
+    "currency_type": {
+        "type": "Number",
+        "required": true
+    },
+    "current_amount": {
+        "type": "Number",
+        "required": true
+    },
+    "spending_type": {
+        "type": "String",
+        "required": true
+    },
+    "deleted": {
+        "type": "Number",
+        "required": true
+    },
+    "deleted_at": {
+        "type": "Date",
+        "required": true
+    },
+    "lite_plan_enabled": {
+        "type": "Number",
+        "required": true,
+        "description": "(0, 1)"
+    },
+    "lite_plan_credit_use": {
+        "type": "Number",
+        "required": true,
+        "description": "(0, 1)"
+    },
+    "peak_hour_amount": {
+        "type": "Number",
+        "required": true
+    },
+    "peak_hour_status": {
+        "type": "Number",
+        "required": true
+    },
+    "cash_cost": {
+        "type": "Number",
+        "required": true
+    },
+    "created_at": {
+        "type": "Date"
+    },
+    "updated_at": {
+        "type": "Date"
+    }
+  },
+  "medi_in_network_transaction_receipt": {
+    "in_network_transaction_receipt_id": {
+        "type": "Number",
+        "required": true
+    },
+    "in_network_transaction_id": {
+        "type": "Number",
+        "required": true
+    }
+    ,"member_id": {
+        "type": "Number",
+        "required": true
+    }
+    ,"file_name": {
+        "type": "String",
+        "required": true
+    }
+    ,"file_type": {
+        "type": "String"
+    }
+    ,"file_receipt_type": {
+        "type": "String",
+        "required": true,
+        "description": "(0 ,transaction receipt, 1 ,medical receipt)"
+    }
+    ,"created_at": {
+        "type": "Date"
+    }
+    ,"updated_at": {
+        "type": "Date"
+    }
+  },
+  "medi_customer_replace_employee": {
+    "customer_replace_employee_id": {
+      "type": "Number",
+      "required": true
+    },
+    "member_id": {
+          "type": "Number",
+          "required": true
+      },
+    "new_member_id": {
+          "type": "Number",
+          "required": true
+      },
+    "active_plan_id": {
+          "type": "Number",
+          "required": true
+      },
+    "expired_and_activate": {
+          "type": "Date",
+          "required": true
+      },
+    "start_date": {
+          "type": "Date",
+          "required": true
+      },
+    "first_name": {
+          "type": "String",
+          "required": true
+      },
+    "last_name": {
+          "type": "String",
+          "required": true
+      },
+    "nric": {
+          "type": "String",
+          "required": true
+      },
+    "email": {
+          "type": "String",
+          "required": true
+      },
+    "dob": {
+          "type": "Date"
+      },
+    "mobile": {
+          "type": "Number",
+          "required": true
+      },
+    "postal_code": {
+          "type": "Number",
+          "required": true
+      },
+    "deactive_employee_status": {
+          "type": "Number",
+          "required": true
+      },
+    "status": {
+          "type": "Number",
+          "required": true
+      },
+    "medical": {
+          "type": "Number"
+      },
+    "wellness": {
+          "type": "Number"
+      },
+    "replace_status": {
+          "type": "Number"
+      },
+    "created_at": {
+          "type": "Date",
+          "required": true
+      },
+    "updated_at": {
+          "type": "Date",
+          "required": true
+      }
+  },
+  "medi_admin_logs": {
+    "admin_log_id": {
+      "type": "Number",
+      "required": true
+    },
+    "admin_id": {
+        "type": "Number",
+        "required": true
+    },
+    "admin_type": {
+        "type": "String",
+        "required": true,
+        "description": ["admin", "hr", "employee"]
+    },
+    "type": {
+        "type": "Number",
+        "required": true
+    },
+    "data": {
+        "type": "String",
+        "required": true
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_out_of_network_transactions": {
+    "out_of_network_transaction_id": {
+      "type": "Number",
+      "required": true
+    },
+    "member_id": {
+      "type": "Number",
+      "required": true
+    },
+    "claim_type": {
+      "type": "String",
+      "required": true
+    },
+    "provider": {
+      "type": "String",
+      "required": true
+    },
+    "visit_date": {
+      "type": "String",
+      "required": true
+    },
+    "visit_time": {
+      "type": "String",
+      "required": true
+    },
+    "claim_amount": {
+      "type": "Number",
+      "required": true
+    },
+    "spending_type": {
+      "type": "String",
+      "required": true,
+      "description": ["medical", "wellness"]
+    },
+    "claim_status": {
+      "type": "Number",
+      "required": true
+    },
+    "status_date": {
+      "type": "Date",
+      "required": true
+    },
+    "status_reason": {
+      "type": "String",
+      "required": true
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_company_groups": {
+    "company_group_id":{
+      "type": "Number",
+      "required": true
+    },
+    "set_limit": {
+      "type": "Number",
+      "required": true
+    },
+    "group_name": {
+      "type": "String",
+      "required": true
+    },
+    "created_at": {
+      "type": "Date",
+      "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_out_of_network_files": {
+    "out_of_network_file_id": {
+      "type": "Number",
+      "required": true
+    },
+    "out_of_network_id": {
+        "type": "Number",
+        "required": true
+    },
+    "file_name": {
+        "type": "String",
+        "required": true
+    },
+    "file_type": {
+        "type": "String",
+        "required": true
+    },
+    "file_receipt_type": {
+        "type": "String",
+        "required": true,
+        "description": ["transaction_receipt", "medical_receipt"]
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  },
+  "medi_customer_replace_dependent": {
+    "customer_replace_dependent_id": {
+      "type": "Number",
+      "required": true
+    },
+    "member_id": {
+        "type": "Number",
+        "required": true
+    },
+    "new_id": {
+        "type": "Number",
+        "required": true
+    },
+    "customer_id": {
+        "type": "Number",
+        "required": true
+    },
+    "dependent_plan_id": {
+        "type": "Number",
+        "required": true
+    },
+    "plan_tier_id": {
+        "type": "Number",
+        "required": true
+    },
+    "expired_date": {
+        "type": "Number",
+        "required": true
+    },
+    "first_name": {
+        "type": "Number",
+        "required": true
+    },
+    "last_name": {
+        "type": "Number",
+        "required": true
+    },
+    "nric": {
+        "type": "Number",
+        "required": true
+    },
+    "postal_code": {
+        "type": "Number",
+        "required": true
+    },
+    "dob": {
+        "type": "Number",
+        "required": true
+    },
+    "start_date": {
+        "type": "Number",
+        "required": true
+    },
+    "relationship": {
+        "type": "Number",
+        "required": true
+    },
+    "deactivate_dependent_status": {
+        "type": "Number",
+        "required": true
+    },
+    "replace_status": {
+        "type": "Number",
+        "required": true
+    },
+    "status": {
+        "type": "Number",
+        "required": true
+    },
+    "created_at": {
+        "type": "Date",
+        "required": true
+    },
+    "updated_at": {
+        "type": "Date",
+        "required": true
+    }
+  }
+}

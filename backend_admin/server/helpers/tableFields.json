@@ -1,0 +1,10 @@
+{
+    "medi_users": {
+        "_id" : "object_id",
+        "firstname" : "first_name",
+        "middlename" : "middle_name",
+        "lastname" : "last_name",
+        "username" : "user_name",
+        "password" : "user_password"
+    }
+}
